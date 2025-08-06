@@ -7,12 +7,16 @@ class AppTextFormField extends StatelessWidget {
   final String label;
   final TextEditingController controller;
   final bool? readOnly;
+  final Widget? prefixIcon;
+  final Widget? suffixIcon;
 
   const AppTextFormField({
     super.key,
     required this.label,
     required this.controller,
     this.readOnly,
+    this.prefixIcon,
+    this.suffixIcon,
   });
 
   @override
@@ -30,6 +34,8 @@ class AppTextFormField extends StatelessWidget {
           borderRadius: BorderRadius.circular(14),
           borderSide: const BorderSide(color: AppColors.darkSecondary),
         ),
+        prefixIcon: prefixIcon,
+        suffixIcon: suffixIcon,
       ),
       style: TextStyle(
         color: AppColors.darkPrimary,

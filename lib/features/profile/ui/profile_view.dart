@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/utils/app_colors.dart';
 import '../../../core/widgets/app_text_form_field.dart';
 import 'widgets/profile_image_stack.dart';
 
@@ -19,11 +20,13 @@ class ProfileView extends StatelessWidget {
             AppTextFormField(
               label: 'Name',
               controller: TextEditingController(),
+              prefixIcon: const Icon(Icons.person, color: AppColors.darkPrimary),
             ),
             const SizedBox(height: 20),
             AppTextFormField(
               label: 'Email',
               controller: TextEditingController(),
+              prefixIcon: const Icon(Icons.email, color: AppColors.darkPrimary),
               readOnly: true,
             ),
           ],

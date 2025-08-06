@@ -9,6 +9,7 @@ class AppTextFormField extends StatelessWidget {
   final bool? readOnly;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
+  final bool? obscureText;
 
   const AppTextFormField({
     super.key,
@@ -17,12 +18,14 @@ class AppTextFormField extends StatelessWidget {
     this.readOnly,
     this.prefixIcon,
     this.suffixIcon,
+    this.obscureText,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      obscureText: obscureText ?? false,
       decoration: InputDecoration(
         labelText: label,
         labelStyle: TextStyle(

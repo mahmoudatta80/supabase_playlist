@@ -1,8 +1,11 @@
+import 'package:chat_app/home_screen.dart';
+import 'package:chat_app/supabase_helper.dart';
 import 'package:flutter/material.dart';
 
-import 'register_screen.dart';
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-void main() {
+  await SupabaseHelper.init();
   runApp(const MyApp());
 }
 
@@ -13,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: RegisterScreen(),
+      home: HomeScreen(),
     );
   }
 }

@@ -8,4 +8,6 @@ abstract class SupabaseHelper {
   static Future init() async {
     await Supabase.initialize(url: projectUrl, anonKey: apiKey);
   }
+
+  static SupabaseClient get client => Supabase.instance.client;
 }

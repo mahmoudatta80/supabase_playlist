@@ -15,6 +15,7 @@ class ChatApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: AppColors.darkBackground,
         fontFamily: AppConstants.appFontFamily,
+        brightness: Brightness.dark,
         appBarTheme: const AppBarTheme(
           backgroundColor: AppColors.darkBackground,
           foregroundColor: AppColors.darkPrimary,

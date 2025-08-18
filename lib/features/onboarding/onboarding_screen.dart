@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../core/routing/app_routes.dart';
-import '../../core/utils/app_colors.dart';
+import '../../core/widgets/app_elevated_button.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -33,27 +33,6 @@ class OnboardingScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class AppElevatedButton extends StatelessWidget {
-  final String label;
-  final void Function()? onPressed;
-
-  const AppElevatedButton({super.key, required this.label, this.onPressed});
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.darkPrimary,
-        foregroundColor: AppColors.darkBackground,
-        minimumSize: const Size(double.infinity, 50),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-      ),
-      child: Text(label),
     );
   }
 }

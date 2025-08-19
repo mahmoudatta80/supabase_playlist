@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../../../core/helpers/font_weight_helper.dart';
-import '../../../../core/routing/app_routes.dart';
 import '../../../../core/utils/app_colors.dart';
-import '../../../../core/widgets/app_elevated_button.dart';
 import '../widgets/login/dont_have_an_account.dart';
+import '../widgets/login/login_button.dart';
 import '../widgets/login/login_form.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -32,14 +30,7 @@ class LoginScreen extends StatelessWidget {
                 const SizedBox(height: 30),
                 const LoginForm(),
                 const SizedBox(height: 30),
-                AppElevatedButton(
-                  label: 'Login',
-                  onPressed: () {
-                    GoRouter.of(
-                      context,
-                    ).pushReplacement(AppRoutes.layoutScreen);
-                  },
-                ),
+                const LoginButton(),
                 const SizedBox(height: 20),
                 const DontHaveAnAccount(),
               ],

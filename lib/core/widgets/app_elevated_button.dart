@@ -5,8 +5,14 @@ import '../utils/app_colors.dart';
 class AppElevatedButton extends StatelessWidget {
   final String label;
   final void Function()? onPressed;
+  final bool? isLoading;
 
-  const AppElevatedButton({super.key, required this.label, this.onPressed});
+  const AppElevatedButton({
+    super.key,
+    required this.label,
+    this.onPressed,
+    this.isLoading,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +24,9 @@ class AppElevatedButton extends StatelessWidget {
         minimumSize: const Size(double.infinity, 50),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
       ),
-      child: Text(label),
+      child: isLoading == true
+          ? const CircularProgressIndicator(color: AppColors.darkBackground)
+          : Text(label),
     );
   }
 }

@@ -1,8 +1,10 @@
+import 'package:chat_app/core/utils/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../core/routing/app_routes.dart';
+import '../../core/utils/app_shared_preferences.dart';
 import '../../core/widgets/app_elevated_button.dart';
 
 class OnboardingScreen extends StatelessWidget {
@@ -25,8 +27,14 @@ class OnboardingScreen extends StatelessWidget {
               const SizedBox(height: 20),
               AppElevatedButton(
                 label: 'Get Started',
-                onPressed: () {
-                  GoRouter.of(context).pushReplacement(AppRoutes.registerScreen);
+                onPressed: () async {
+                  GoRouter.of(
+                    context,
+                  ).pushReplacement(AppRoutes.registerScreen);
+                  await AppSharedPreferences().setBool(
+                    AppConstants.isFirstTimeToOpenAppKey,
+                    false,
+                  );
                 },
               ),
             ],

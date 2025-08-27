@@ -11,6 +11,8 @@ import '../../features/auth/ui/screens/register_screen.dart';
 import '../../features/chat_room/ui/chat_room_screen.dart';
 import '../../features/layout/ui/layout_screen.dart';
 import '../../features/onboarding/onboarding_screen.dart';
+import '../../features/profile/data/repos/profile_repo_impl.dart';
+import '../../features/profile/logic/fetch_profile_cubit/fetch_profile_cubit.dart';
 import '../utils/app_constants.dart';
 import '../utils/app_secure_storage.dart';
 import '../utils/app_shared_preferences.dart';
@@ -85,7 +87,12 @@ abstract class AppRouter {
         path: AppRoutes.layoutScreen,
         pageBuilder: (context, state) {
           return CustomTransitionPage(
-            child: const LayoutScreen(),
+            child: BlocProvider(
+              create: (context) =>
+                  FetchProfileCubit(getIt.get<ProfileRepoImpl>())
+                    ..fetchProfile(),
+              child: const LayoutScreen(),
+            ),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
                   return FadeTransition(opacity: animation, child: child);

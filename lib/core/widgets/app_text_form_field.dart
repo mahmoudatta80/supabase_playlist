@@ -46,6 +46,7 @@ class AppTextFormField extends StatelessWidget {
         fontWeight: FontWeightHelper.semiBold,
       ),
       readOnly: readOnly ?? false,
+      enabled: readOnly == true ? false : true,
     );
   }
 }

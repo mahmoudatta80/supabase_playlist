@@ -10,5 +10,4 @@ abstract class AuthRepo {
   );
   Future<Either<Failure, String>> login(AuthRequestModel authRequestModel);
   Future<Either<Failure, Unit>> createUser(UserModel userModel);
-  // logout();
 }
